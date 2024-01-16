@@ -14,7 +14,7 @@ const Dashboard = () => {
   const navigate = useNavigate();
 
   const viewDetail = (item) => {
-    console.log('line 14', item);
+    console.log(item);
     navigate('/movieDetails',  { state: { param: item } });
   };
 
@@ -31,13 +31,14 @@ const Dashboard = () => {
 
   const ListRecommendedListItem = ({ item }) => {
     return (
-      <li>
+      <li style={{ display: "flex" }}>
         <img
           className="img"
           src={`https://media.themoviedb.org/t/p/w440_and_h660_face${item.poster_path}`}
           alt="Logo"
         />
-        {item.title}
+        <h3 style={{ justifyContent: "center", marginLeft: "100px" }}>{item.title}</h3>
+        <p style={{ justifyContent: "center", marginLeft: "100px" }}>{item.overview}</p>
       </li>
     );
   };
@@ -70,7 +71,7 @@ const Dashboard = () => {
     )
       .then((response) => response.json())
       .then((response) => {
-        console.log("line 19", response?.results);
+        console.log(response?.results);
         setWatchlistMovies(response?.results);
       })
       .catch((err) => console.error(err));

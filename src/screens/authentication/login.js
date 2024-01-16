@@ -85,7 +85,7 @@ const Login = () => {
     await fetch("https://api.themoviedb.org/4/auth/access_token", options)
       .then((response) => response.json())
       .then((response) => {
-        console.log('line 88', response);
+        console.log(response);
         dispatch(savingToken(response?.account_id));
         dispatch(savingAccessToken(response?.access_token));
       })

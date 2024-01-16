@@ -6,7 +6,7 @@ import "./movieDetails.css";
 const MovieDetails = () => {
   let location = useLocation();
   const { original_title, overview, poster_path } = location?.state?.param || {};
-  console.log("line 8", location?.state?.param);
+  console.log(location?.state?.param);
 
   return (
     <div style={{ marginLeft: "40px", marginTop: "72px" }}>

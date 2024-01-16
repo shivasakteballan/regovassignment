@@ -30,8 +30,8 @@ const MyProfile = () => {
     };
 
     return (
-        <div>
-        <div>My Profile</div>
+        <div style={{ marginLeft: "40px", marginTop: "72px" }}>
+        <h1 className="headerText">My Profile</h1>
         <button onClick={logout}>Logout</button>
         </div>
     );
