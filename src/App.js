@@ -1,24 +1,55 @@
-import logo from './logo.svg';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import './App.css';
 
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Root from "./routes/root";
+import ErrorPage from "./error-page";
+
+import Login from './screens/authentication/login';
+import Dashboard from './screens/dashboard/dashboard';
+import MovieDetails from './screens/movieDetails/movieDetails';
+import Watchlist from './screens/watchlist/watchlist';
+import MyProfile from './screens/myProfile/myProfile';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "",
+        element: <Dashboard />,
+      },
+      {
+        path: "watchlist",
+        element: <Watchlist />,
+      },
+      {
+        path: "myProfile/",
+        element: <MyProfile />,
+      },
+      {
+        path: "movieDetails/",
+        element: <MovieDetails />,
+      },
+    ],
+  },
+]);
+
 function App() {
+  const user = useSelector((state) => state.counter.value)
+  if (!user) {
+    return (
+      <Login />
+    );
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RouterProvider router={router} />
   );
 }
 

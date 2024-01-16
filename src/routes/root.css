@@ -1,0 +1,33 @@
+.header {
+    text-align: center;
+}
+
+.menu-bar {
+    float: left;
+    content: "";
+    display: table;
+    width: 20%;
+    height: 100%;
+    margin-left: 50px;
+    margin-top: 230px;
+    border-radius: 8px;
+    padding: 10px;
+    clear: both;
+    background-color: #F1F1F1;
+  }
+
+.content {
+    float: inline-start;
+    margin-top: 50px;
+}
+
+.column {
+    float: left;
+    padding: 10px;
+  }
+
+.column.side {
+    width: 25%;
+    height: 100%;
+    background-color: #F1F1F1;
+}
