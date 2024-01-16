@@ -1,0 +1,28 @@
+.headerText {
+    text-align: center;
+}
+
+.card {
+    width: 1000px;
+    height: 200px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.img {
+    width: 133.33px;
+    height: 200px;
+}
+
+.card-component {
+    /* margin-left: 500px; */
+    /* max-width: 80%; */
+    /* padding: 50px; */
+}
+
+.searchColumn {
+    display: flex;
+    justify-content: center;
+}
